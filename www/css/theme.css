@@ -1,0 +1,41 @@
+
+body {
+    background-color: #E8E8E8;
+    font-size: 16px;
+}
+#header {
+    overflow: hidden;
+}
+#header h1, #header p {
+/*
+    margin: 0;
+*/
+}
+#content {
+    background-color: #FFFFFF;
+}
+
+
+/* social links *
+ * ------------ */
+
+#communiquer a {
+  overflow: hidden;
+  text-indent: 100%;
+  white-space: nowrap;
+  font: 0/0 a;
+  padding: 16px;
+  background: url('../icons/feed-32x32.png') no-repeat 0 0;
+}
+#communiquer a#identica {
+  background-image: url('../icons/identica-32x32.png');
+}
+#communiquer a#twitter {
+  background-image: url('../icons/twitter-32x32.png');
+}
+#communiquer a#google {
+  background-image: url('../icons/google+-32x32.png');
+}
+#communiquer a#lanyrd {
+  background-image: url('../icons/lanyrd-32x32.png');
+}
