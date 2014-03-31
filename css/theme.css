@@ -11,7 +11,7 @@ body {
     margin: 0;
 */
 }
-#content {
+#main {
     background-color: #FFFFFF;
 }
 
@@ -31,11 +31,26 @@ body {
   background-image: url('../icons/identica-32x32.png');
 }
 #communiquer a#twitter {
-  background-image: url('../icons/twitter-32x32.png');
+  background-image: url('../icons/twitter-32.png');
 }
 #communiquer a#google {
-  background-image: url('../icons/google+-32x32.png');
+  background-image: url('../icons/google-plus-32.png');
 }
 #communiquer a#lanyrd {
   background-image: url('../icons/lanyrd-32x32.png');
+}
+#communiquer a#facebook {
+  background-image: url('../icons/facebook-32.png');
+}
+
+/* Footer *
+ * ------ */
+
+#footer {
+    font-size: 0.875em;
+    color: #999;
+    text-align: right;
+}
+#footer a {
+    color: #777;
 }
