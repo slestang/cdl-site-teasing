@@ -11,7 +11,7 @@ body {
     margin: 0;
 */
 }
-#content {
+#main {
     background-color: #FFFFFF;
 }
 
@@ -41,4 +41,16 @@ body {
 }
 #communiquer a#facebook {
   background-image: url('../icons/facebook-32.png');
+}
+
+/* Footer *
+ * ------ */
+
+#footer {
+    font-size: 0.875em;
+    color: #999;
+    text-align: right;
+}
+#footer a {
+    color: #777;
 }
