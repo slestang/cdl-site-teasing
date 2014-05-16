@@ -3,13 +3,15 @@ body {
     background-color: #E8E8E8;
     font-size: 16px;
 }
+
+/* Header *
+ * ------ */
+
 #header {
     overflow: hidden;
 }
-#header h1, #header p {
-/*
+h1.text-hide, h2.text-hide {
     margin: 0;
-*/
 }
 #main {
     background-color: #FFFFFF;
