@@ -7,14 +7,25 @@ body {
 /* Header *
  * ------ */
 
-#header {
-    overflow: hidden;
+.header-wrapper {
+	background: url('../images/banniere-teaser.png') left center transparent;
+	color: white;
 }
-h1.text-hide, h2.text-hide {
-    margin: 0;
+#top {
+	margin-bottom: 80px;
 }
-#main {
-    background-color: #FFFFFF;
+#top h2 {
+	color: #FFFFFF;
+}
+#top h3 {
+	color: #ffad08;
+}
+#cta {
+	margin-bottom: 3em;
+}
+.btn-cta {
+	background-color: #ffad08;
+	font-size: 1.5em; 
 }
 
 
