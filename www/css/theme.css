@@ -1,13 +1,13 @@
 
 body {
-    background-color: #E8E8E8;
+    background-color: #FEFEFE;
     font-size: 16px;
 }
 
 /* Header *
  * ------ */
 
-.header-wrapper {
+#header-wrapper {
 	background: url('../images/banniere-teaser.png') left center transparent;
 	color: white;
 }
@@ -32,7 +32,7 @@ body {
 /* social links *
  * ------------ */
 
-#communiquer a {
+.communiquer a {
   overflow: hidden;
   text-indent: 100%;
   white-space: nowrap;
@@ -40,29 +40,46 @@ body {
   padding: 16px;
   background: url('../icons/feed-32x32.png') no-repeat 0 0;
 }
-#communiquer a#identica {
-  background-image: url('../icons/identica-32x32.png');
-}
-#communiquer a#twitter {
+.communiquer a#twitter {
   background-image: url('../icons/twitter-32.png');
 }
-#communiquer a#google {
+.communiquer a#google {
   background-image: url('../icons/google-plus-32.png');
 }
-#communiquer a#lanyrd {
+.communiquer a#diaspora {
+  background-image: url('../icons/diaspora-32.png');
+}
+.communiquer a#lanyrd {
   background-image: url('../icons/lanyrd-32x32.png');
 }
-#communiquer a#facebook {
+.communiquer a#facebook {
   background-image: url('../icons/facebook-32.png');
+}
+.communiquer a#flickr {
+  background-image: url('../icons/flickr-32.png');
+}
+
+
+/* Nav *
+ * ------ */
+
+
+/* Content *
+ * ------ */
+
+#content-wrapper {
+	background-color: #FEFEFE;
 }
 
 /* Footer *
  * ------ */
 
-#footer {
+#footer-wrapper {
     font-size: 0.875em;
     color: #999;
+    background-color: #E3E3E3;
     text-align: right;
+    padding: 15px 0;
 }
 #footer a {
     color: #777;
