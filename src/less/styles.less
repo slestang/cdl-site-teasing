@@ -10,33 +10,38 @@ body {
  * ------ */
 
 #header-wrapper {
-	background: url('../images/banniere-teaser.png') left center transparent;
-	color: white;
-}
-#header-wrapper a {
-	color: white;
-}
-#header-wrapper a:hover {
-	color: #D03D00;
+    background: url('../images/banniere-teaser.png') left center transparent;
+    color: white;
+    a {
+        color: white;
+        &:hover {
+            color: #D03D00;
+        }
+    }
 }
 
 #top {
-	margin-bottom: 80px;
-}
-#top h2 {
-	color: #FFFFFF;
-}
-#top h3 {
-	color: #ffad08;
+    margin-bottom: 80px;
+    h2 {
+        color: #FFFFFF;
+    }
+    h3 {
+        color: #ffad08;
+    }
 }
 #cta {
-	margin-bottom: 3em;
+    margin-bottom: 3em;
 }
 .btn-cta {
-	background-color: transparent;
-	border-color: #FFF;
-	font-size: 1.5em;
+    background-color: transparent;
+    border-color: #FFF;
+    font-size: 1.5em;
     margin-bottom: 0.5em;
+    &:hover {
+        border-color: #D03D00;
+        background-color: #F3F3F3;
+        color: #D03D00;
+    }
     @media (min-width: @screen-md-min) {
         .glyphicon {
             display: block;
@@ -45,43 +50,41 @@ body {
         }
     }
 }
-.btn-cta:hover {
-	border-color: #D03D00;
-	background-color: #F3F3F3;
-	color: #D03D00;
-}
 
 
 /* social links *
  * ------------ */
 
-.communiquer a {
-  overflow: hidden;
-  text-indent: 100%;
-  white-space: nowrap;
-  font: 0/0 a;
-  padding: 16px;
-  background: url('../icons/feed-32x32.png') no-repeat 0 0;
+.communiquer {
+    margin-bottom: 25px;
+    a {
+        overflow: hidden;
+        text-indent: 100%;
+        white-space: nowrap;
+        font: 0/0 a;
+        padding: 16px;
+        margin-right: 10px;
+        background: url('../icons/feed-32x32.png') no-repeat 0 0;
+        &#twitter {
+          background-image: url('../icons/twitter-32.png');
+        }
+        &#google {
+          background-image: url('../icons/google-plus-32.png');
+        }
+        &#diaspora {
+          background-image: url('../icons/diaspora-32.png');
+        }
+        &#lanyrd {
+          background-image: url('../icons/lanyrd-32x32.png');
+        }
+        &#facebook {
+          background-image: url('../icons/facebook-32.png');
+        }
+        &#flickr {
+          background-image: url('../icons/flickr-32.png');
+        }
+    }
 }
-.communiquer a#twitter {
-  background-image: url('../icons/twitter-32.png');
-}
-.communiquer a#google {
-  background-image: url('../icons/google-plus-32.png');
-}
-.communiquer a#diaspora {
-  background-image: url('../icons/diaspora-32.png');
-}
-.communiquer a#lanyrd {
-  background-image: url('../icons/lanyrd-32x32.png');
-}
-.communiquer a#facebook {
-  background-image: url('../icons/facebook-32.png');
-}
-.communiquer a#flickr {
-  background-image: url('../icons/flickr-32.png');
-}
-
 
 /* Nav *
  * ------ */
@@ -91,7 +94,7 @@ body {
  * ------ */
 
 #content-wrapper {
-	background-color: #FEFEFE;
+    background-color: #FEFEFE;
 }
 
 /* Footer *
