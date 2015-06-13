@@ -6483,7 +6483,7 @@ a.list-group-item-danger.active:focus {
 /* Header *
  * ------ */
 #header-wrapper {
-  background: url('../images/banniere-teaser.png') left center transparent;
+  background: url('../images/banniere-teaser.jpg') left center #222222;
   color: white;
 }
 #header-wrapper a {
