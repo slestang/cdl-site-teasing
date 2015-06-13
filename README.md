@@ -5,7 +5,9 @@ Cette page de teasing est ensuite utiisée en tant que homepage du site contenan
 
 Pour contribuer au fichier `www/index.html`, pas besoin d'installer quoi que ce soit.
 
-## Installation (pour le thème)
+## Installation des outils de dév
+
+*Note :* ces outils ne sont utile que si vous souhaitez modifier les feuilles de style.
 
 Les feuilles de styles de ce projet sont automatiquement compilées depuis les fichiers less, puis minifiées par l'outil [Gulp](http://gulpjs.com/) (un [bon tutoriel](http://www.sitepoint.com/introduction-gulp-js/)).
 
