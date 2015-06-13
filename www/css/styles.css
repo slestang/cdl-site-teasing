@@ -6526,14 +6526,17 @@ a.list-group-item-danger.active:focus {
 /* Footer *
  * ------ */
 #footer-wrapper {
-  font-size: 0.875em;
+  font-size: 0.95em;
   color: #999;
-  background-color: #E3E3E3;
+  background-color: #222222;
   padding: 15px 0;
   margin-bottom: 0;
 }
+#footer {
+  color: #CCC;
+}
 #footer a {
-  color: #777;
+  color: #777777;
 }
 /* social links *
  * ------------ */
@@ -6605,4 +6608,7 @@ li {
 }
 #animations {
   background-color: #e8e8e8;
+}
+#mentions-legales {
+  font-size: 0.85em;
 }
