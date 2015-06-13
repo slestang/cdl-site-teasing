@@ -6507,6 +6507,7 @@ a.list-group-item-danger.active:focus {
 .btn-cta {
   background-color: transparent;
   border-color: #FFF;
+  font-family: texgyreadventor, sans-serif;
   font-size: 1.5em;
   margin-bottom: 0.5em;
 }
