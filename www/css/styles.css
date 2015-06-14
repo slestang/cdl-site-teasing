@@ -6495,11 +6495,9 @@ a.list-group-item-danger.active:focus {
 #top {
   margin-bottom: 80px;
 }
-#top h2 {
-  color: #FFFFFF;
-}
+#top h2,
 #top h3 {
-  color: #ffad08;
+  text-align: center;
 }
 #cta {
   margin-bottom: 3em;
@@ -6607,6 +6605,15 @@ a.list-group-item-danger.active:focus {
 /* Scalfoldings */
 li {
   margin-bottom: 0.5em;
+}
+.white {
+  color: #FFF;
+}
+.yellow {
+  color: #ffad08;
+}
+.gray-lighter {
+  color: #eeeeee;
 }
 .btn-bred {
   background-color: transparent;
