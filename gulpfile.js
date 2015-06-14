@@ -48,6 +48,9 @@ var bootstrapjs = {
   ],
   dir: './node_modules/bootstrap/'
 };
+var jqueryjs = {
+  dir: './node_modules/jquery/'
+};
 
 gulp.task(
   'build-bootstrap',
@@ -56,6 +59,12 @@ gulp.task(
       .pipe(concat('bootstrap.js'))
       .pipe(rename({suffix: '.min'}))
       .pipe(uglify())
+      .pipe(gulp.dest('./www/js/'))
+  });
+gulp.task(
+  'build-jquery',
+  function() {
+    gulp.src([jqueryjs['dir']+'dist/jquery.min.js'])
       .pipe(gulp.dest('./www/js/'))
   });
 
