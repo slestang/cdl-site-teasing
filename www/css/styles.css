@@ -6570,19 +6570,13 @@ a.list-group-item-danger.active:focus {
 .communiquer a#flickr {
   background-image: url('../icons/flickr-32.png');
 }
-li {
-  margin-bottom: 0.5em;
-}
-/* Nav *
- * ------ */
-/* Content *
- * ------ */
-.banner {
-  padding: 30px 0;
-}
+/* Home page *
+ * -------- */
+/* À propos */
 #apropos {
   font-size: 1.15em;
 }
+/* Programme */
 #programme {
   background-color: #333333;
   color: #eeeeee;
@@ -6606,9 +6600,31 @@ li {
 .thematiques p {
   padding: 4px;
 }
+/* Animations */
 #animations {
   background-color: #e8e8e8;
 }
+/* Scalfoldings */
+li {
+  margin-bottom: 0.5em;
+}
+.btn-bred {
+  background-color: transparent;
+  color: #d03d00;
+  border-color: #d03d00;
+}
+.btn-bred:hover {
+  color: #333333;
+  border-color: #333333;
+}
+/* Nav *
+ * ------ */
+/* Content *
+ * ------ */
+.banner {
+  padding: 30px 0;
+}
+/* Mentions légales */
 #mentions-legales {
   font-size: 0.85em;
 }
