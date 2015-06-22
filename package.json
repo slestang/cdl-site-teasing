@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/toulibre/cdl-site-teasing#readme",
   "devDependencies": {
-    "bootstrap": "^3.3.4",
+    "bootstrap": "^3.3.5",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.5.2",
