@@ -8,6 +8,7 @@
 // Import componants
 @import "componants/communication.less";
 @import "componants/home.less";
+@import "componants/sponsors.less";
 
 /* Scalfoldings */
 
@@ -31,6 +32,13 @@ li {
     color: @text-color;
     border-color: @text-color;
   }
+}
+
+/* override bootstrap */
+@media (max-width: 480px) {
+    .media-body, .media-left, .media-right {
+        display: block;
+    }
 }
 
 /* Nav *
