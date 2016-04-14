@@ -1,6 +1,6 @@
 {
   "name": "cdl-site-teasing",
-  "version": "2015.0.1",
+  "version": "2016.0.0",
   "description": "Site teasing du Capitole du Libre",
   "main": "index.html",
   "scripts": {
@@ -17,13 +17,13 @@
   },
   "homepage": "https://github.com/toulibre/cdl-site-teasing#readme",
   "devDependencies": {
-    "bootstrap": "^3.3.5",
+    "bootstrap": "^3.3.6",
     "gulp": "^3.9.0",
     "gulp-autoprefixer": "^2.3.1",
     "gulp-concat": "^2.5.2",
     "gulp-jshint": "^1.11.0",
-    "gulp-less": "^3.0.3",
-    "gulp-minify-css": "^1.1.6",
+    "gulp-less": "^3.0.5",
+    "gulp-clean-css": "^2.0.6",
     "gulp-notify": "^2.2.0",
     "gulp-rename": "^1.2.2",
     "gulp-sourcemaps": "^1.5.2",
