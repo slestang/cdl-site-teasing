@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "gulp build-bootstrap && gulp build-jquery && gulp styles",
+    "copy_to_blogtheme": "cp www/css/styles.min.css ../cdl-blog/cdltheme-blog/static/css/styles.min.css",
     "watch": "gulp watch"
   },
   "repository": {

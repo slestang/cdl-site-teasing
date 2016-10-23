@@ -5620,6 +5620,18 @@ a.thumbnail.active {
 .logo-100px {
   width: 100px;
 }
+/* Specific styles for blog site *
+*  Blog theme will use this built theme style.
+* */
+body.blog #header-wrapper {
+  background-position: left bottom;
+}
+body.blog #top {
+  margin-bottom: 20px;
+}
+body.blog #top img {
+  width: 200px;
+}
 /* Scalfoldings */
 li {
   margin-bottom: 0.5em;
