@@ -5633,9 +5633,15 @@ body.blog #top {
 body.blog #top img {
   width: 200px;
 }
+body.blog .navbar {
+  margin-bottom: 0;
+}
 /* Scalfoldings */
 li {
   margin-bottom: 0.5em;
+}
+.navbar-nav > li {
+  margin-bottom: 0;
 }
 .white {
   color: #FFF;
@@ -5668,7 +5674,7 @@ li {
 /* Content *
  * ------ */
 .banner {
-  padding: 30px 0;
+  padding: 20px 0;
 }
 /* Mentions légales */
 #mentions-legales {
