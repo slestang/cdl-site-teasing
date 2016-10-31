@@ -1,4 +1,4 @@
-(function() {
+(function(global, moment) {
   "use strict";
 
   var TIME_SLICE = 5 // minutes
@@ -24,6 +24,12 @@
     var minutes = (timeInt % (60 / TIME_SLICE)) * TIME_SLICE
     minutes = (minutes < 10) ? '0' + minutes.toString() : minutes.toString()
     return hours + ':' + minutes
+  }
+
+  function convertDateStrToHumanDateStr(dateStr) {
+    moment.locale('fr')
+    var humanDate = moment(dateStr, 'YYYY-MM-DD').format('dddd DD MMMM')
+    return humanDate.substring(0, 1).toUpperCase() + humanDate.substr(1)
   }
 
   function fetchProgram(callback) {
@@ -143,7 +149,7 @@
 
       programmeContainer.insertAdjacentHTML('beforeend',
           '<div id="day' + dayIndex + '">' +
-          '<h2 class="text-center">' + dayInfo.date +'</h2>' + // TODO better format
+          '<h2 class="text-center">' + convertDateStrToHumanDateStr(dayInfo.date) +'</h2>' +
           '<table id="table' + dayIndex + '" class="table table-bordered">' +
           '<thead>' +
           '<tr>' +
@@ -161,4 +167,4 @@
   }
 
   fetchProgram(createProgramTables)
-})()
+})(window, window.moment)
