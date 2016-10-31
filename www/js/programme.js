@@ -4,8 +4,7 @@
   var TIME_SLICE = 5 // minutes
   var SLOT_DURATION = 30 // minutes
   var config = {
-    // programmeUrl: "https://participez-2016.capitoledulibre.org/planning/program/public/?format=xml"
-    programmeUrl: "programme.xml"
+    programmeUrl: "https://participez-2016.capitoledulibre.org/planning/program/public/?format=xml"
   }
 
   function getChildText(parent, elemTagName) {
