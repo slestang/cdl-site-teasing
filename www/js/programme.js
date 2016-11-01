@@ -133,7 +133,13 @@
                 console.error("Two events are one the same room at the same time", room, event)
               }
               timeByRooms.set(room, event.start + event.duration)
-              row += '<td rowspan="' + eventRowSpan + '" class="event">' +
+              var typeClass = 'event-type-'
+              switch (event.type) {
+                case 'conference': typeClass += 'conference'; break
+                case 'atelier': typeClass += 'atelier'; break
+                case 'keynote': typeClass += 'keynote'; break
+              }
+              row += '<td rowspan="' + eventRowSpan + '" class="event ' + typeClass + '">' +
                   '<div class="event-title">'+ event.title +'</div></td>'
             } else {
               if (lastCellEndTime <= idx || (lastCellEndTime > idx && lastCellEndTime < slotEndTime)) {
