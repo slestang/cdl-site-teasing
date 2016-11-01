@@ -5630,7 +5630,11 @@ a.thumbnail.active {
   text-align: center;
 }
 .event-title {
+  font-size: 80%;
+}
+.event-persons {
   font-size: 70%;
+  font-style: italic;
 }
 .event-type-conference {
   background-color: #50bb41;

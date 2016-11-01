@@ -93,14 +93,13 @@
             abstract: getChildText(eventElem, 'abstract'),
             description: getChildText(eventElem, 'description'),
           }
+          event.persons = Array.prototype.slice.call(eventElem.getElementsByTagName('person')).map(function(personElem) {
+            return personElem.textContent
+          })
+          event.links = Array.prototype.slice.call(eventElem.getElementsByTagName('link')).map(function(linkElem) {
+            return linkElem.textContent
+          })
           // console.log("Event", start, duration, dayInfo.end, event.title)
-          // TODO persons and links
-          /*
-          <persons>
-              <person id="15">ArboreSign</person>
-          </persons>
-          <links></links>
-          */
           events.push(event)
         } catch (e) {
           console.error("Error while parsing event", eventElem, e)
@@ -140,7 +139,9 @@
                 case 'keynote': typeClass += 'keynote'; break
               }
               row += '<td rowspan="' + eventRowSpan + '" class="event ' + typeClass + '">' +
-                  '<div class="event-title">'+ event.title +'</div></td>'
+                  '<div class="event-title">'+ event.title +'</div>' +
+                '<div class="event-persons">' + event.persons.join(', ') + '</div>' +
+                '</td>'
             } else {
               if (lastCellEndTime <= idx || (lastCellEndTime > idx && lastCellEndTime < slotEndTime)) {
                 row += '<td rowspan="' + (slotEndTime - lastCellEndTime) + '" class="empty-slot"></td>'
