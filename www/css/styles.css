@@ -5645,6 +5645,9 @@ a.thumbnail.active {
 .event-type-keynote {
   background-color: #BA6417;
 }
+.event-room {
+  font-size: 90%;
+}
 .fa-spin {
   -webkit-animation: fa-spin 2s infinite linear;
   animation: fa-spin 2s infinite linear;

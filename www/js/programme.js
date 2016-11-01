@@ -44,6 +44,21 @@
     xhr.send();
   }
 
+  function renderEvent(event, rowSpan, colSpan) {
+    var room = ''
+    var typeClass = 'event-type-'
+    switch (event.type) {
+      case 'conference': typeClass += 'conference'; break
+      case 'atelier': typeClass += 'atelier'; break
+      case 'keynote': typeClass += 'keynote'; room = '<div class="event-room">' + event.room + '</div>'; break
+    }
+    return '<td rowspan="' + rowSpan + '" colspan="' + colSpan + '" class="event ' + typeClass + '">' +
+      '<div class="event-title">'+ event.title +'</div>' +
+      '<div class="event-persons">' + event.persons.join(', ') + '</div>' +
+      room +
+    '</td>'
+  }
+
   function createProgramTables(programXML) {
     var programmeContainer = document.getElementById('programme')
     programmeContainer.innerHTML = '' // we remove the loader
@@ -123,32 +138,28 @@
           var rowSpan = SLOT_DURATION / TIME_SLICE
           var slotEndTime = idx+SLOT_DURATION/TIME_SLICE
           row += '<td rowspan="' + rowSpan + '" class="slot-times">' + timeIntToStr(idx) + ' – ' + timeIntToStr(slotEndTime) + '</td>'
-          roomsArray.forEach(function(room) {
-            var lastCellEndTime = timeByRooms.get(room)
-            var event = events.find(function(e) { return e.day === dayIndex && e.start === idx && e.room === room })
-            if (event) {
-              var eventRowSpan = event.duration
-              if (event.start < lastCellEndTime) {
-                console.error("Two events are one the same room at the same time", room, event)
+          var keynoteEvent = events.find(function(e) { return e.day === dayIndex && e.start === idx && e.type === 'keynote' })
+          if (keynoteEvent) {
+            timeByRooms.forEach(function(duration, room) { timeByRooms.set(room, keynoteEvent.start + keynoteEvent.duration) })
+            row += renderEvent(keynoteEvent, keynoteEvent.duration, roomsArray.length)
+          } else {
+            roomsArray.forEach(function(room) {
+              var lastCellEndTime = timeByRooms.get(room)
+              var event = events.find(function(e) { return e.day === dayIndex && e.start === idx && e.room === room })
+              if (event) {
+                if (event.start < lastCellEndTime) {
+                  console.error("Two events are one the same room at the same time", room, event)
+                }
+                timeByRooms.set(room, event.start + event.duration)
+                row += renderEvent(event, event.duration, 1)
+              } else {
+                if (lastCellEndTime <= idx || (lastCellEndTime > idx && lastCellEndTime < slotEndTime)) {
+                  row += '<td rowspan="' + (slotEndTime - lastCellEndTime) + '" class="empty-slot"></td>'
+                  timeByRooms.set(room, slotEndTime)
+                }
               }
-              timeByRooms.set(room, event.start + event.duration)
-              var typeClass = 'event-type-'
-              switch (event.type) {
-                case 'conference': typeClass += 'conference'; break
-                case 'atelier': typeClass += 'atelier'; break
-                case 'keynote': typeClass += 'keynote'; break
-              }
-              row += '<td rowspan="' + eventRowSpan + '" class="event ' + typeClass + '">' +
-                  '<div class="event-title">'+ event.title +'</div>' +
-                '<div class="event-persons">' + event.persons.join(', ') + '</div>' +
-                '</td>'
-            } else {
-              if (lastCellEndTime <= idx || (lastCellEndTime > idx && lastCellEndTime < slotEndTime)) {
-                row += '<td rowspan="' + (slotEndTime - lastCellEndTime) + '" class="empty-slot"></td>'
-                timeByRooms.set(room, slotEndTime)
-              }
-            }
-          })
+            })
+          }
         }
         row += '</tr>'
         rows += row
