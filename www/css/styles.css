@@ -5620,12 +5620,8 @@ a.thumbnail.active {
 /* Specific styles for blog site *
 *  Blog theme will use this built theme style.
 * */
-.program-table {
-  table-layout: fixed;
-}
 .header-room {
   text-align: center;
-  width: 7rem;
 }
 .slot-times-header {
   width: 4rem;
