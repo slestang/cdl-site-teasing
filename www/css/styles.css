@@ -5762,6 +5762,9 @@ button.close {
 /* Specific styles for blog site *
 *  Blog theme will use this built theme style.
 * */
+.day-container + .day-container {
+  margin-top: 6rem;
+}
 .program-table .header-room {
   text-align: center;
 }
@@ -5794,7 +5797,8 @@ button.close {
   vertical-align: middle;
 }
 .program-table .event-title {
-  font-size: 80%;
+  font-size: 75%;
+  font-weight: bold;
 }
 .program-table .event-persons {
   font-size: 70%;
