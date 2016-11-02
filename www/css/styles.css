@@ -5637,13 +5637,13 @@ a.thumbnail.active {
   font-style: italic;
 }
 .event-type-conference {
-  background-color: #50bb41;
+  background-color: #39af3a;
 }
 .event-type-atelier {
   background-color: #6db3cc;
 }
 .event-type-keynote {
-  background-color: #BA6417;
+  background-color: #e7e7e7;
 }
 .event-room {
   font-size: 90%;
