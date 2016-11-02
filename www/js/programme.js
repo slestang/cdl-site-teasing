@@ -183,7 +183,7 @@
       }
 
       programmeContainer.insertAdjacentHTML('beforeend',
-          '<div id="day' + dayIndex + '">' +
+          '<div id="day' + dayIndex + '" class="day-container">' +
           '<h2 class="text-center">' + convertDateStrToHumanDateStr(dayInfo.date) +'</h2>' +
           '<table id="table' + dayIndex + '" class="table table-bordered program-table">' +
           '<thead>' +
