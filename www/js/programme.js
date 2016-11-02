@@ -1,6 +1,8 @@
 (function(global, moment) {
   "use strict";
 
+  window.addEventListener('DOMContentLoaded', init, {once: true});
+
   var TIME_SLICE = 5 // minutes
   var SLOT_DURATION = 30 // minutes
   var config = {
@@ -52,7 +54,13 @@
       case 'atelier': typeClass += 'atelier'; break
       case 'keynote': typeClass += 'keynote'; room = '<div class="event-room">' + event.room + '</div>'; break
     }
-    return '<td rowspan="' + rowSpan + '" colspan="' + colSpan + '" class="event ' + typeClass + '">' +
+    return '<td ' +
+      'rowspan="' + rowSpan + '" ' +
+      'colspan="' + colSpan + '" ' +
+      'class="event ' + typeClass + '" ' +
+      'tabindex="0" ' +
+      'data-event-id="' + event.id + '"' +
+      '>' +
       '<div class="event-title">'+ event.title +'</div>' +
       '<div class="event-persons">' + event.persons.join(', ') + '</div>' +
       room +
@@ -95,6 +103,7 @@
 
           var event = {
             day: dayIndex,
+            date: dayDate,
             id: parseInt(eventElem.getAttribute('id')),
             start: start,
             duration: duration,
@@ -190,7 +199,34 @@
           '</div>'
       )
     })
+
+    // Setup the event system to show the modal with the event details
+    $('td.event').on('click keydown', function(domEvent) {
+      if (domEvent.type === 'keydown' && (domEvent.key !== " " && domEvent.key !== "Enter")) return
+      var eventId = parseInt(this.dataset.eventId)
+      var event = events.find(function(e) { return e.id === eventId })
+      if (!event) {
+        console.error("Could found event with id", eventId)
+        return
+      }
+      showEventDetailsModal(event)
+    })
   }
 
-  fetchProgram(createProgramTables)
+  function showEventDetailsModal(event) {
+    var modal = $('#event-details-modal')
+    modal.find('.event-title').text(event.title)
+    modal.find('.event-persons').text(event.persons.join(', '))
+    modal.find('.event-track').text(event.track)
+    modal.find('.event-time').text(convertDateStrToHumanDateStr(event.date) + ' ' + timeIntToStr(event.start) + ' – ' + timeIntToStr(event.start + event.duration))
+    modal.find('.event-room').text(event.room)
+    modal.find('.event-abstract').text(event.abstract)
+    modal.find('.event-description').text(event.description)
+    modal.modal('show')
+  }
+
+  function init() {
+    fetchProgram(createProgramTables)
+  }
+
 })(window, window.moment)
