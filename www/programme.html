@@ -22,10 +22,19 @@
       <div class="modal-body">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h3 class="event-title"></h3>
-        <div><span class="glyphicon glyphicon-user"></span>&nbsp;<span class="event-persons"></span></div>
-        <div><span class="glyphicon glyphicon-tag"></span>&nbsp;<span class="event-track"></span></div>
-        <div><span class="glyphicon glyphicon-time"></span>&nbsp;<span class="event-time"></span></div>
-        <div><span class="glyphicon glyphicon-map-marker"></span>&nbsp;<span class="event-room"></span></div>
+        <div class="container-fluid event-info">
+          <div class="row">
+            <div class="col-lg-6"><span class="glyphicon glyphicon-user"></span>&nbsp;<span class="event-persons"></span></div>
+            <div class="col-lg-6"><span class="glyphicon glyphicon-tag"></span>&nbsp;<span class="event-track"></span></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6"><span class="glyphicon glyphicon-time"></span>&nbsp;<span class="event-time"></span></div>
+            <div class="col-lg-6"><span class="glyphicon glyphicon-map-marker"></span>&nbsp;<span class="event-room"></span></div>
+          </div>
+          <div class="row">
+            <div class="col-lg-6"><span class="glyphicon glyphicon-info-sign"></span>&nbsp;<span class="event-type"></span></div>
+          </div>
+        </div>
         <div class="event-abstract"></div>
         <div class="event-description"></div>
       </div>

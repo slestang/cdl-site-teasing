@@ -220,6 +220,13 @@
     modal.find('.event-track').text(event.track)
     modal.find('.event-time').text(convertDateStrToHumanDateStr(event.date) + ' ' + timeIntToStr(event.start) + ' – ' + timeIntToStr(event.start + event.duration))
     modal.find('.event-room').text(event.room)
+    var type = ''
+    switch (event.type) {
+      case 'conference': type = 'Conférence'; break
+      case 'atelier': type = 'Atelier'; break
+      case 'keynote': type = 'Keynote'; break
+    }
+    modal.find('.event-type').text(type)
     modal.find('.event-abstract').text(event.abstract)
     modal.find('.event-description').text(event.description)
     modal.modal('show')

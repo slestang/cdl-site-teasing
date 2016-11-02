@@ -5843,16 +5843,7 @@ button.close {
 #event-details-modal .event-title {
   margin-bottom: 22px;
 }
-#event-details-modal .event-persons {
-  font-size: 90%;
-}
-#event-details-modal .event-track {
-  font-size: 90%;
-}
-#event-details-modal .event-time {
-  font-size: 90%;
-}
-#event-details-modal .event-room {
+#event-details-modal .event-info {
   font-size: 90%;
 }
 #event-details-modal .event-abstract {
