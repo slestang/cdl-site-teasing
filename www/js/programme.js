@@ -137,7 +137,15 @@
         if ((idx * TIME_SLICE) % SLOT_DURATION === 0) {
           var rowSpan = SLOT_DURATION / TIME_SLICE
           var slotEndTime = idx+SLOT_DURATION/TIME_SLICE
-          row += '<td rowspan="' + rowSpan + '" class="slot-times">' + timeIntToStr(idx) + ' – ' + timeIntToStr(slotEndTime) + '</td>'
+          row += '<td rowspan="' + rowSpan + '">' +
+            '<div class="slot-times-container">' +
+              '<div class="slot-times">' +
+                '<div class="time-slot-start">' + timeIntToStr(idx) + '</div>' +
+                '<div class="time-slot-middle"> – </div>' +
+                '<div class="time-slot-end">' + timeIntToStr(slotEndTime) + '</div>' +
+              '</div>' +
+            '</div>' +
+            '</td>'
           var keynoteEvent = events.find(function(e) { return e.day === dayIndex && e.start === idx && e.type === 'keynote' })
           if (keynoteEvent) {
             timeByRooms.forEach(function(duration, room) { timeByRooms.set(room, keynoteEvent.start + keynoteEvent.duration) })

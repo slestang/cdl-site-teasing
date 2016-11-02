@@ -5630,8 +5630,23 @@ a.thumbnail.active {
 .slot-times-header {
   width: 4rem;
 }
+.slot-times-container {
+  display: inline-block;
+  height: 100%;
+}
 .slot-times {
-  text-align: center;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: column wrap;
+      flex-flow: column wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .event {
   text-align: center;
