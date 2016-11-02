@@ -168,10 +168,10 @@
       programmeContainer.insertAdjacentHTML('beforeend',
           '<div id="day' + dayIndex + '">' +
           '<h2 class="text-center">' + convertDateStrToHumanDateStr(dayInfo.date) +'</h2>' +
-          '<table id="table' + dayIndex + '" class="table table-bordered">' +
+          '<table id="table' + dayIndex + '" class="table table-bordered program-table">' +
           '<thead>' +
           '<tr>' +
-          '<th></th>' + // the hours column
+          '<th class="slot-times-header"></th>' + // the hours column
           roomsHeader +
           '</tr>' +
           '</thead>' +
